@@ -1,4 +1,4 @@
-# ultimate-tic-tac-toe
+# Ultimate-Tic-Tac-Toe
 
 Hi! This is my implementation of Ultimate Tic Tac Toe, which is a game that has 9 tic-tac-toe boards set up on a big tic-tac-toe board. I learned about this game 
 
