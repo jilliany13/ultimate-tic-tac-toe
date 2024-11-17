@@ -5,14 +5,16 @@ public class BigBoard {
 
     private char realBigBoard[][];
     private int winningBoards[];
+    private final int ROWS = TicTacToeRunner.ROWS;
+    private final int COLS = TicTacToeRunner.COLS;
 
     /**
      * Creates a new BigBoard class
      */
     public BigBoard() {
 
-        realBigBoard = new char[3][3]; // stores the X/O's for the overall board
-        winningBoards = new int[6];
+        realBigBoard = new char[ROWS][COLS]; // stores the X/O's for the overall board
+        winningBoards = new int[ROWS * 2];
         this.resetBoard();
 
     }
@@ -22,14 +24,15 @@ public class BigBoard {
      */
     public void resetBoard() {
 
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
+        for (int i = 0; i < ROWS; i++) {
+            for (int j = 0; j < COLS; j++) {
                 realBigBoard[i][j] = ' ';
             }
         }
     }
 
     /**
+     * To Do - Make this method for efficient
      * Checks if there's a winner of the overall game
      * 
      * @return winner
@@ -38,7 +41,7 @@ public class BigBoard {
     public char checkWinner() {
 
         // checks the rows and columns for winner
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < ROWS; i++) {
             if (realBigBoard[i][0] == realBigBoard[i][1] && realBigBoard[i][0] == realBigBoard[i][2]
                     && realBigBoard[i][0] != ' ') {
                 winningBoards[0] = i;
@@ -86,7 +89,6 @@ public class BigBoard {
         }
 
         return ' ';
-
     }
 
     /**
@@ -95,11 +97,14 @@ public class BigBoard {
      * @param p
      *          player character for the one who got the Single Win (win on a small
      *          board)
+     * @param row 
+     *          row index 
+     * @param col    
+     *          column index 
      */
     public void singleWin(char p, int row, int col) {
 
         realBigBoard[row][col] = p;
-
     }
 
     /**
@@ -133,8 +138,8 @@ public class BigBoard {
         }
 
         // Checks all of the spaces on the board
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
+        for (int i = 0; i < ROWS; i++) {
+            for (int j = 0; j < COLS; j++) {
 
                 // if there is at least one empty space on the board
                 if (realBigBoard[i][j] == ' ') {

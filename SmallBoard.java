@@ -7,6 +7,8 @@ public class SmallBoard {
     private int[] computerMove;
     private char[][] board;
     private boolean isWon;
+    private final int ROWS = TicTacToeRunner.ROWS;
+    private final int COLS = TicTacToeRunner.COLS;
 
     // Have an opening screen where the person gets to choose their character
     public static final char PLAYER1 = 'X';
@@ -35,7 +37,7 @@ public class SmallBoard {
      */
     public char checkWinnerSmall() {
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < ROWS; i++) {
 
             // Checks the rows
             if (board[i][0] == board[i][1] && board[i][1] == board[i][2] && board[i][0] != ' ') {
@@ -71,12 +73,11 @@ public class SmallBoard {
      */
     public void resetBoard() {
 
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
+        for (int i = 0; i < ROWS; i++) {
+            for (int j = 0; j < COLS; j++) {
                 board[i][j] = ' ';
             }
         }
-
     }
 
     /**
@@ -150,8 +151,8 @@ public class SmallBoard {
             return false;
         }
 
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
+        for (int i = 0; i < ROWS; i++) {
+            for (int j = 0; j < COLS; j++) {
 
                 // if there is at least one empty space on the board
                 if (board[i][j] == ' ') {
@@ -162,7 +163,6 @@ public class SmallBoard {
 
         // the board is full and not won, so it's tied
         return true;
-
     }
 
     /**

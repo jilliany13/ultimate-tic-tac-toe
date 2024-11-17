@@ -4,6 +4,10 @@
  */
 public class TicTacToeRunner {
 
+    public final static int ROWS = 3;
+    public final static int COLS = 3;
+
+
     /**
      * Runs the game
      * 

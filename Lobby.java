@@ -1,10 +1,9 @@
+import java.awt.*;
+import java.awt.event.*;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
-
-import java.awt.event.*;
-import java.awt.*;
 
 /**
  * Game lobby
@@ -28,6 +27,7 @@ public class Lobby extends JFrame implements ActionListener {
     }
 
     /**
+     * To Do - Make the sizes relative to the Window Size
      * Initializes the Lobby
      * Called in TicTacToe Runner
      * 
@@ -46,12 +46,12 @@ public class Lobby extends JFrame implements ActionListener {
 
         Font btnFont = new Font("Comic Sans", Font.BOLD, 15);
 
-        onePlayerBtn.setBounds(200, SwingConstants.TOP + 150, 100, 75);
+        onePlayerBtn.setBounds(200, SwingConstants.TOP + 150, 125, 75);
         onePlayerBtn.setFont(btnFont);
         onePlayerBtn.setBackground(Color.GREEN);
         onePlayerBtn.addActionListener(this);
 
-        twoPlayerBtn.setBounds(450, SwingConstants.TOP + 150, 100, 75);
+        twoPlayerBtn.setBounds(450, SwingConstants.TOP + 150, 125, 75);
         twoPlayerBtn.setFont(btnFont);
         twoPlayerBtn.setBackground(Color.CYAN);
         twoPlayerBtn.addActionListener(this);
